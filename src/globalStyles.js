@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
 
     :root{
         --red: hsl( 0, 62%, 48%);
+        --red-hover: hsl( 7, 80%, 49%);
         --orange: hsl( 16, 100%, 65%);
         --blue: hsl(180, 62%, 48%, 0.6);
     }
@@ -18,6 +19,10 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 16px;
         box-sizing: border-box;
     }
+
+    /* * {
+        border: 1px solid rebeccapurple
+    } */
 
 
 `
