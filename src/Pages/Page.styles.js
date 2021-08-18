@@ -52,9 +52,15 @@ export const ButtonsContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    
-    @media screen and (max-width: 1230px) {
-     
+
+    p{
+        font-weight: 600;
+        font-size: 1rem;
+        white-space: nowrap;
     }
+    
+    /* @media screen and (max-width: 1230px) {
+      flex-direction: column;
+    } */
 
 `

@@ -37,6 +37,15 @@ const StyledPageButton = styled.button`
         box-shadow: none;
     }
 
+      @media screen and (max-width: 1230px) {
+       span{
+           display: none;
+       }
+
+       img{
+           margin: 0;
+       }
+    }
     
 `
 
@@ -46,7 +55,7 @@ const PageButton = ({text, icon, direction, onClick, disabled }) => {
             <div>
             <img src={ icon === "previous" ? previous : next } alt=''/>
             
-            {text} 
+            <span>{text}  </span>
             </div>
 
         </StyledPageButton>
