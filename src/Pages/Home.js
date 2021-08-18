@@ -10,7 +10,6 @@ const Home = ({ favorites, setFavorites }) => {
     const [ pokemons, setPokemons ] = useState([])
     const [ currentPage, setCurrentPage ] = useState(0)
     const [ page, setPage ] = useState(1)
-    
 
     function fetchPokemonJSON() {
         axios.get(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${currentPage}`)
@@ -36,12 +35,20 @@ const Home = ({ favorites, setFavorites }) => {
         setFavorites()
     }
 
+
     return (
         <StyledPage>
             <HomePageContainer>
                 < PokemonContainer>
                     {
-                        pokemons.map((e, index) => (<HomeCard key={index} name={e.name} onClick={() => handleClickAddFavorites()} favorites={ favorites } setFavorites={setFavorites}/>))
+                        pokemons.map((e, index) => ( <HomeCard 
+                            key={index} name={e.name} 
+                            onClick={() => handleClickAddFavorites()} 
+                            favorites={ favorites } 
+                            setFavorites={setFavorites}
+                            page={page}
+                            />
+                        ))
                     }
                 </PokemonContainer>
                 <ButtonsContainer>

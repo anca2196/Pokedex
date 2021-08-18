@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import pokeball from "../assets/pokeball.svg"
 import favPokeball from "../assets/favourite-pokeball.svg"
 import removeIcon from "../assets/remove.svg"
@@ -55,7 +55,8 @@ const StyledFavCard = styled.div`
 const AddFavorites = styled.div`
     width: 2.5rem;
     height:2.5rem;
-    background: url(${(props) => props.action === "false" ? pokeball : favPokeball }) center/ contain no-repeat;
+    /* background: url(${(props) => props.action === "false" ? pokeball : favPokeball }) center/ contain no-repeat; */
+    background: url(${pokeball}) center/ contain no-repeat ;
     cursor: pointer;
 
     &:hover, &:active {
@@ -72,22 +73,32 @@ const RemoveFavorites = styled.div`
     background: url(${removeIcon}) center/ contain no-repeat ;
 `
 
-export const HomeCard = ({ favorites, name, setFavorites }) => {
+export const HomeCard = ({ favorites, name, setFavorites, page }) => {
     const [ actionFavoritesIcon, setActionFavoritesIcon ] = useState(false)
 
     function handleClickAddFavorites(e) {
-        setFavorites([...favorites, name])
+        setFavorites([...favorites, name ])
     }
 
     function handleChangeIcon (e) {
         setActionFavoritesIcon(!actionFavoritesIcon)
     }
+
+    function handleRefreshIcons () {
+        setActionFavoritesIcon(false)
+    }
    
+    useEffect( handleRefreshIcons,[page])
 
     return (
         <StyledHomeCard>
             <StyledPokemonLink to={`/${name}`}><p> { name } </p></StyledPokemonLink>
-            <AddFavorites  action={actionFavoritesIcon ? "true" : "false"} onClick={ () => { handleClickAddFavorites() ; handleChangeIcon()}} />
+               <div>
+                { 
+                    favorites.includes( name ) ? <RemoveFavorites /> 
+                    : <AddFavorites  action={actionFavoritesIcon ? "true" : "false"} onClick={ () => { handleClickAddFavorites() ; handleChangeIcon()}} />
+                }
+               </div>
         </StyledHomeCard>
     )
 }

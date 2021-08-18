@@ -1,13 +1,16 @@
 import React from 'react'
 import { FavCard } from '../components/Cards';
 import { StyledPage, FavsContainer } from './Page.styles';
+import idle from "../assets/idle.svg"
 
 const Favorites = ({favorites, handleRemoveFavorite}) => {
     return (
         <StyledPage>
             <h1> Your Favorites</h1>
             <FavsContainer>
-            { favorites.map( (pokemon, index) => ( <FavCard key={index} name={pokemon} />))}
+            { 
+             favorites.length < 1 ? <img src={idle} alt="empty favorites list" />
+                : favorites.map( (pokemon, index) => ( <FavCard key={index} name={pokemon} />))}
             </FavsContainer>
           
         </StyledPage>

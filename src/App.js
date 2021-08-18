@@ -26,6 +26,7 @@ function App() {
       console.log("I'm new favorites", newFavorites)
       console.log(pokemon)
   }
+
   console.log(favorites)
 
   
