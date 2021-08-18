@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { StyledPage, PokemonContainer, ButtonsContainer } from './Page.styles' 
+import { StyledPage, HomePageContainer, PokemonContainer, ButtonsContainer } from './Page.styles' 
 import { HomeCard } from '../components/Cards';
 import axios from 'axios';
 import PageButton from '../components/Buttons/PageButton';
-
 
 
 
@@ -39,17 +38,18 @@ const Home = ({ favorites, setFavorites }) => {
 
     return (
         <StyledPage>
-            < PokemonContainer>
-                {
-                    pokemons.map((e, index) => (<HomeCard key={index} name={e.name} onClick={() => handleClickAddFavorites()} favorites={ favorites } setFavorites={setFavorites}/>))
-                }
-            </PokemonContainer>
-            <ButtonsContainer>
-                < PageButton text={"Previous"} icon={"previous"} onClick={() => handleClickPrevPage()} disabled={ currentPage === 0 ? "disabled" : ""}/>
-                <p>{page} / 56 </p>
-                < PageButton text={"Next"} icon={"next"} direction={"row-reversed"} onClick={() => handleClickNextPage()} disabled={ currentPage === 1100 ? "disabled" : ""}/>
-            </ButtonsContainer>
-            
+            <HomePageContainer>
+                < PokemonContainer>
+                    {
+                        pokemons.map((e, index) => (<HomeCard key={index} name={e.name} onClick={() => handleClickAddFavorites()} favorites={ favorites } setFavorites={setFavorites}/>))
+                    }
+                </PokemonContainer>
+                <ButtonsContainer>
+                    < PageButton text={"Previous"} icon={"previous"} onClick={() => handleClickPrevPage()} disabled={ currentPage === 0 ? "disabled" : ""}/>
+                    <p>{page} / 56 </p>
+                    < PageButton text={"Next"} icon={"next"} direction={"row-reversed"} onClick={() => handleClickNextPage()} disabled={ currentPage === 1100 ? "disabled" : ""}/>
+                </ButtonsContainer>
+            </HomePageContainer>
         </StyledPage>
     )
 }

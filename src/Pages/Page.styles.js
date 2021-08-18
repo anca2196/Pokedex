@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const StyledPage = styled.div`
     width: 70%;
@@ -11,13 +12,17 @@ export const StyledPage = styled.div`
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+    overflow-y: auto;
+    h1{
+        text-align: center;
+    }
+`
+export const HomePageContainer = styled.div`
+    height: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    
-
-   
 `
 
 export const PokemonContainer = styled.div`
@@ -63,4 +68,19 @@ export const ButtonsContainer = styled.div`
       flex-direction: column;
     } */
 
+`
+
+export const FavsContainer = styled.div`
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+`
+
+export const StyledPokemonLink = styled(NavLink)`
+    text-decoration: none;
+    color: black;
 `

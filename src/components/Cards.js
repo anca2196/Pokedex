@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import pokeball from "../assets/pokeball.svg"
 import favPokeball from "../assets/favourite-pokeball.svg"
 import removeIcon from "../assets/remove.svg"
+import { StyledPokemonLink } from "../Pages/Page.styles";
+
 
 const StyledHomeCard = styled.div`
     width: 45%;
@@ -29,11 +31,31 @@ const StyledHomeCard = styled.div`
     }
 
 `
+const StyledFavCard = styled.div`
+    width:80%;
+    background: var(--orange);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+    padding: .5rem 1.5rem;
+    margin: .6rem;
+    font-weight: 600;
 
-const AddFavourites = styled.div`
+    p{
+        cursor: pointer;
+    }
+    
+    &:hover, &:active {
+        background: var(--blue);
+    }
+`
+
+const AddFavorites = styled.div`
     width: 2.5rem;
     height:2.5rem;
-    background: url(${(props) => props.action === "false" ? pokeball : removeIcon }) center/ contain no-repeat;
+    background: url(${(props) => props.action === "false" ? pokeball : favPokeball }) center/ contain no-repeat;
     cursor: pointer;
 
     &:hover, &:active {
@@ -42,6 +64,12 @@ const AddFavourites = styled.div`
         height:3rem;
     }
     
+`
+
+const RemoveFavorites = styled.div`
+    width: 2.5rem;
+    height:2.5rem;
+    background: url(${removeIcon}) center/ contain no-repeat ;
 `
 
 export const HomeCard = ({ favorites, name, setFavorites }) => {
@@ -53,15 +81,23 @@ export const HomeCard = ({ favorites, name, setFavorites }) => {
 
     function handleChangeIcon (e) {
         setActionFavoritesIcon(!actionFavoritesIcon)
-        console.log(actionFavoritesIcon)
     }
    
 
     return (
         <StyledHomeCard>
-            <p> <span> </span>{ name } </p>
-            <AddFavourites  action={actionFavoritesIcon ? "true" : "false"} onClick={ () => { handleClickAddFavorites() ; handleChangeIcon()}} />
+            <StyledPokemonLink to={`/${name}`}><p> { name } </p></StyledPokemonLink>
+            <AddFavorites  action={actionFavoritesIcon ? "true" : "false"} onClick={ () => { handleClickAddFavorites() ; handleChangeIcon()}} />
         </StyledHomeCard>
+    )
+}
+
+export const FavCard = ({name}) => {
+    return (
+        <StyledFavCard >
+            <StyledPokemonLink to={`/${name}`}><p> {name}</p></StyledPokemonLink>
+            <RemoveFavorites />
+        </StyledFavCard>
     )
 }
 

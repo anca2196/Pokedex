@@ -9,7 +9,7 @@ const StyledNavButton = styled.button`
     background: none;
     font-size: 2rem;
     margin: 1rem;
-    padding: .5em 3em;
+    padding: .5em 2em;
     font-weight: 600;
     text-align: center;
 
@@ -29,9 +29,9 @@ const StyledNavButton = styled.button`
     
 `
 
-const NavButton = ({text, state}) => {
+const NavButton = ({text, state, onClick}) => {
     return (
-        <StyledNavButton >
+        <StyledNavButton onClick={ onClick }>
             {text}
         </StyledNavButton>
     )
