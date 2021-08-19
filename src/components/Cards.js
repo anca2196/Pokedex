@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import React, { useReducer } from 'react'
 import pokeball from "../assets/pokeball.svg"
 import favPokeball from "../assets/favourite-pokeball.svg"
 import removeIcon from "../assets/remove.svg"
 import { StyledPokemonLink } from "../Pages/Page.styles";
-
-
+import commentIcon from "../assets/comment-icon.svg"
 
 const StyledHomeCard = styled.div`
     width: 45%;
@@ -78,9 +76,12 @@ const RemoveFavorites = styled.div`
         height:3rem;
     }
 `
+const CommentCardContainer = styled.div`
+    background: hsl(0, 0%, 100%, 83% );
+    border-radius: 14px;;
+`
 
 export const HomeCard = ({ favorites, name, setFavorites }) => {
-    const [ _ , forceUpdate] = useReducer((x) => x + 1, 0);
 
     function handleClickAddFavorites(e) {
         setFavorites([...favorites, name ])
@@ -98,7 +99,7 @@ export const HomeCard = ({ favorites, name, setFavorites }) => {
             <StyledPokemonLink to={`/${name}`}><p> { name } </p></StyledPokemonLink>
                <div>
                 { 
-                    favorites.includes( name ) ? <RemoveFavorites onClick={() => { handleClickRemoveFavorites(); forceUpdate()}}/> 
+                    favorites.includes( name ) ? <RemoveFavorites onClick={() => { handleClickRemoveFavorites() }}/> 
                     : <AddFavorites onClick={ () => { handleClickAddFavorites() }} />
                 }
                </div>
@@ -123,3 +124,14 @@ export const FavCard = ({favorites, setFavorites, name}) => {
     )
 }
 
+export const CommentCard = ({num, comment, name, date }) => {
+    return (
+        <CommentCardContainer>
+            <img src={commentIcon} alt="" />
+            <p>{name}</p>
+            <p>{comment}</p>
+           <p>{num}</p>
+           <p>{date}</p>
+        </CommentCardContainer>
+    )
+}

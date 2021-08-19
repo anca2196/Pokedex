@@ -13,7 +13,7 @@ export const StyledPage = styled.div`
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     overflow-y: auto;
-    h1{
+    h1, h2{
         text-align: center;
     }
 `
@@ -48,6 +48,7 @@ export const PokemonContainer = styled.div`
             border-radius: 4px;
             background-color: rgba(0, 0, 0, .5);
             -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+            box-shadow: 0 0 1px rgba(255, 255, 255, .5);
             }
                 }
 `
@@ -83,4 +84,28 @@ export const FavsContainer = styled.div`
 export const StyledPokemonLink = styled(NavLink)`
     text-decoration: none;
     color: black;
+`
+
+export const PokeDetailsContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    div{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+    }
+    
+`
+export const PokemonDetailsWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span{
+        font-weight: 600;
+    }
 `

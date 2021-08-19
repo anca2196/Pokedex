@@ -18,18 +18,7 @@ function App() {
   const [ favorites, setFavorites ] = useState([]);
   const [ homePageDisplay, setHomePageDisplay ] = useState("home");
 
-  function handleRemoveFavorite(pokemon) {
-      let newFavorites = favorites.filter(
-        (fav) => fav !== pokemon
-      )
-      setFavorites(newFavorites);
-      console.log("I'm new favorites", newFavorites)
-      console.log(pokemon)
-  }
 
-  console.log(favorites)
-
-  
  
   return (
     <AppWrapper>
@@ -38,13 +27,13 @@ function App() {
        <Switch>
         <Route exact path="/" >
           { 
-            homePageDisplay === "home" ?  < Home favorites={ favorites } setFavorites={setFavorites} handleRemoveFavorite={handleRemoveFavorite}/> 
+            homePageDisplay === "home" ?  < Home favorites={ favorites } setFavorites={setFavorites} /> 
               :  <Favorites favorites={favorites} setFavorites={setFavorites}/>
           }
         </Route>
-        <Route path="/:name" >
-          < PokemonDetails />
-        </Route>
+        <Route path="/:name" render={(routeProps) => (
+            <PokemonDetails routeProps={routeProps} favorites={favorites} setFavorites={setFavorites}/>
+          )} />
        </Switch>
       
     </AppWrapper>
