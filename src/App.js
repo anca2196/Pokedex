@@ -39,7 +39,7 @@ function App() {
         <Route exact path="/" >
           { 
             homePageDisplay === "home" ?  < Home favorites={ favorites } setFavorites={setFavorites} handleRemoveFavorite={handleRemoveFavorite}/> 
-              :  <Favorites favorites={favorites} handleRemoveFavorite={handleRemoveFavorite}/>
+              :  <Favorites favorites={favorites} setFavorites={setFavorites}/>
           }
         </Route>
         <Route path="/:name" >

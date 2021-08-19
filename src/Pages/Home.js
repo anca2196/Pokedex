@@ -20,7 +20,7 @@ const Home = ({ favorites, setFavorites }) => {
     }
 
     useEffect( fetchPokemonJSON, [ currentPage ] );
-
+  
     function handleClickNextPage() {
         setCurrentPage( prevState => prevState + 20);
         setPage(prevState => prevState + 1)
@@ -35,6 +35,7 @@ const Home = ({ favorites, setFavorites }) => {
         setFavorites()
     }
 
+  
 
     return (
         <StyledPage>
@@ -46,7 +47,6 @@ const Home = ({ favorites, setFavorites }) => {
                             onClick={() => handleClickAddFavorites()} 
                             favorites={ favorites } 
                             setFavorites={setFavorites}
-                            page={page}
                             />
                         ))
                     }
