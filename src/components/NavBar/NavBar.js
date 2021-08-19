@@ -1,9 +1,9 @@
-import React from 'react'
-import logo from "../../assets/logo.svg"
-import Pikachu from "../../assets/pikachu.svg"
-import NavButton from '../Buttons/NavButton'
-import styled from 'styled-components'
-import { NavLink } from "react-router-dom"
+import React from 'react';
+import logo from "../../assets/logo.svg";
+import Pikachu from "../../assets/pikachu.svg";
+import NavButton from '../Buttons/NavButton';
+import styled from 'styled-components';
+import { NavLink } from "react-router-dom";
 
 const NavBarWrapper = styled.div`
     height: 90vh;
@@ -17,7 +17,6 @@ const NavBarWrapper = styled.div`
     div{
         display: flex;
         flex-direction: column;
-        /* margin-top: -15rem; */
     }    
 
     @media screen and (max-width: 750px) {
@@ -31,20 +30,19 @@ const StyledActiveLink = styled(NavLink)`
     &:hover, &:focus {
         outline: none;
     }
-
 `
 const MobileNavBarWrapper = styled.div`
     display: none;
     width: 100%;
+    margin: 1rem;
+
     @media screen and (max-width: 750px) {
         display:flex;
         justify-content: space-between;
-
     }
 `
 
 export const NavBar = ({ setHomePageDisplay }) => {
-
     function handleChangeDisplayHome() {
         setHomePageDisplay("home")
     }

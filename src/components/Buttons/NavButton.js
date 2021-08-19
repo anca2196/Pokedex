@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledNavButton = styled.button`
     cursor: pointer;
@@ -13,8 +13,6 @@ const StyledNavButton = styled.button`
     font-weight: 600;
     text-align: center;
 
- 
-
     &:hover, &:active, :focus {
         background: var(--blue);
         border-radius: 25px;
@@ -27,13 +25,8 @@ const StyledNavButton = styled.button`
     }
 
     @media screen and (max-width: 750px) {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
-
-    @media screen and (max-width: 700px) {
-      padding: 0;
-      border-radius: 10px;
-    } 
     
 `
 
