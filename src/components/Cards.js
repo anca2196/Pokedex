@@ -169,7 +169,7 @@ export const CommentCard = ({num, comment, name, date }) => {
                     <p>{date}</p>
                 </CommentHeadline>
                 <h4>{comment}</h4>
-                <p>{name} saw <span>{num}</span> pokemons! </p>
+                <p>{name} saw <span>{num}</span> Pokemon! </p>
             </CommentText>
         </CommentCardContainer>
     )
