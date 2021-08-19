@@ -121,7 +121,7 @@ const PokemonDetails = ({routeProps, favorites, setFavorites}) => {
                             name='userComment'
                             type='text'
                             id='comment'
-                            nChange={handleChangeUserInputs}
+                            onChange={handleChangeUserInputs}
                         />
                     </form>
                     <StyledSubmitButton>
