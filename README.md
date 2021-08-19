@@ -34,11 +34,11 @@ On this page you can check out all the Pokemon you collected. Of course, the X b
 
 ### Pokemon Details Page 
 Clicking on a Pokemon name will take you to a page with its personal stats. You may add it to favorites if you see something you like or even leave a comment. Using client-side storage, comments will persist even when you refresh the page or close your browser. ( This applies to favorite Pokemon selections as well)
-<img width="1024" alt="Pokedex" src="https://user-images.githubusercontent.com/62710917/130154636-a5f0cdd0-c506-4d4d-819a-83836aab6ce2.png">
+<img width="1024" alt="Pokedex" src="https://user-images.githubusercontent.com/62710917/130157690-81d224ba-c2cf-4825-8202-fc866c70d0d6.png">
 
 ### Media Responsiveness
 
-<img width="521" alt="Pokedex" src="https://user-images.githubusercontent.com/62710917/130157067-e015b0db-93af-448a-ab74-b2c23b88888f.png">
+<img width="521" alt="Pokedex" src="https://user-images.githubusercontent.com/62710917/130157752-fc6d33d2-47d7-4ed6-b542-6c5f464b415a.png">
 
 
 ## Getting Started
