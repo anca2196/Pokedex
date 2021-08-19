@@ -1,4 +1,4 @@
-import NavBar from "./components/NavBar/NavBar";
+import {MobileNavbar, NavBar} from "./components/NavBar/NavBar";
 import { GlobalStyle } from "./globalStyles";
 import styled from "styled-components";
 import Home from "./Pages/Home";
@@ -12,6 +12,10 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 
+@media screen and (max-width: 750px) {
+        flex-direction: column;
+    }
+
 `
 
 function App() {
@@ -24,6 +28,7 @@ function App() {
     <AppWrapper>
        <GlobalStyle />
        < NavBar setHomePageDisplay={ setHomePageDisplay } />
+       <MobileNavbar setHomePageDisplay={ setHomePageDisplay } />
        <Switch>
         <Route exact path="/" >
           { 

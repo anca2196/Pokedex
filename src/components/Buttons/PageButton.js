@@ -9,6 +9,7 @@ const StyledPageButton = styled.button`
     padding: .5em 2em;
     margin: .5rem 5rem;
     border-radius: 50px;
+    border: none;
     box-shadow: 0 4px 4px 0 hsl( 0, 0%, 0%, 0.25 );
     font-size: 1.2rem;
     font-weight: 600;

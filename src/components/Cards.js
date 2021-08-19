@@ -78,7 +78,44 @@ const RemoveFavorites = styled.div`
 `
 const CommentCardContainer = styled.div`
     background: hsl(0, 0%, 100%, 83% );
-    border-radius: 14px;;
+    border-radius: 14px;
+    display: flex;
+    justify-content: flex-start;
+    padding: .5rem;
+    margin: 1rem;
+
+    img{
+        margin-right: 2rem;
+    }
+`
+const CommentText = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    *{
+        margin: .2rem;
+    }
+
+    span{
+        font-weight: 600;
+    }
+
+    h4{
+        font-weight: 400;
+        font-size: 1.1rem;
+    }
+
+    p{
+        font-size: .8rem ;
+    }
+
+`
+const CommentHeadline = styled.div`
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+    
 `
 
 export const HomeCard = ({ favorites, name, setFavorites }) => {
@@ -128,10 +165,17 @@ export const CommentCard = ({num, comment, name, date }) => {
     return (
         <CommentCardContainer>
             <img src={commentIcon} alt="" />
-            <p>{name}</p>
-            <p>{comment}</p>
-           <p>{num}</p>
-           <p>{date}</p>
+            <CommentText>
+                <CommentHeadline>
+                    <h3>{name}</h3>
+                    <p>{date}</p>
+                </CommentHeadline>
+               
+                <h4>{comment}</h4>
+                <p>{name} saw <span>{num}</span> pokemons! </p>
+                
+            </CommentText>
+           
         </CommentCardContainer>
     )
 }

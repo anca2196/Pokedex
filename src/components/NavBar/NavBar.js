@@ -17,8 +17,12 @@ const NavBarWrapper = styled.div`
     div{
         display: flex;
         flex-direction: column;
-        margin-top: -15rem;
+        /* margin-top: -15rem; */
     }    
+
+    @media screen and (max-width: 750px) {
+        display:none;
+    }
 `
 
 const StyledActiveLink = styled(NavLink)`
@@ -29,8 +33,15 @@ const StyledActiveLink = styled(NavLink)`
     }
 
 `
+const MobileNavBarWrapper = styled.div`
+    display: none;
 
-const NavBar = ({ setHomePageDisplay }) => {
+    @media screen and (max-width: 750px) {
+        display:flex;
+    }
+`
+
+export const NavBar = ({ setHomePageDisplay }) => {
 
     function handleChangeDisplayHome() {
         setHomePageDisplay("home")
@@ -42,7 +53,7 @@ const NavBar = ({ setHomePageDisplay }) => {
 
     return (
         <NavBarWrapper>
-            <img src={logo} alt="Pokedex" />
+            <img src={logo} style={{width:"15vw"}} alt="Pokedex" />
             <div>
                 <StyledActiveLink to="/"> 
                     <NavButton text={"All"} onClick={ () => handleChangeDisplayHome() }/>
@@ -51,9 +62,31 @@ const NavBar = ({ setHomePageDisplay }) => {
                     <NavButton text={"Favorites"} onClick={ handleChangeDisplayFavs }/> 
                 </StyledActiveLink>
             </div>
-            <img src={Pikachu} alt="" />
+            <img src={Pikachu} style={{width:"15vw"}} alt="" />
         </NavBarWrapper>
     )
 }
 
-export default NavBar
+export const MobileNavbar = ({ setHomePageDisplay }) => {
+    function handleChangeDisplayHome() {
+        setHomePageDisplay("home")
+    }
+
+    function handleChangeDisplayFavs() {
+        setHomePageDisplay("favs")
+    }
+
+    return(
+        <MobileNavBarWrapper>
+            <img src={logo} style={{width:"20vw"}} alt="Pokedex" />
+            <div>
+            <StyledActiveLink to="/"> 
+                    <NavButton text={"All"} onClick={ () => handleChangeDisplayHome() }/>
+                </StyledActiveLink>
+                <StyledActiveLink to="/"> 
+                    <NavButton text={"Favorites"} onClick={ handleChangeDisplayFavs }/> 
+                </StyledActiveLink>
+            </div>
+        </MobileNavBarWrapper>
+    )
+}

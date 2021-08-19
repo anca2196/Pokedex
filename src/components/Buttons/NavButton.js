@@ -26,6 +26,9 @@ const StyledNavButton = styled.button`
         
     }
 
+    @media screen and (max-width: 750px) {
+        font-size: 1.5rem;
+    }
     
 `
 

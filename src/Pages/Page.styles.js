@@ -13,8 +13,14 @@ export const StyledPage = styled.div`
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     overflow-y: auto;
-    h1, h2{
+    h1{
         text-align: center;
+    }
+
+    @media screen and (max-width: 750px) {
+        width: 90%;
+        margin: 2rem;
+        height: 85vh;
     }
 `
 export const HomePageContainer = styled.div`
@@ -51,6 +57,7 @@ export const PokemonContainer = styled.div`
             box-shadow: 0 0 1px rgba(255, 255, 255, .5);
             }
                 }
+
 `
 
 export const ButtonsContainer = styled.div`
@@ -97,6 +104,11 @@ export const PokeDetailsContainer = styled.div`
     div{
         display: grid;
         grid-template-columns: repeat(2, auto);
+        grid-gap: .5rem;
+    }
+
+    @media screen and (max-width: 1130px) {
+        flex-direction: column;
     }
     
 `
@@ -105,7 +117,31 @@ export const PokemonDetailsWrapper = styled.div`
     flex-direction: column;
     align-items: center;
 
+    h2{
+        font-size: 2rem;
+    }
+
     span{
         font-weight: 600;
     }
+    
+`
+
+export const CommentsContainer = styled.div`
+background: var(--blue);
+margin: 1.5rem;
+padding: .5rem 1.5rem;
+border-radius: 25px;
+
+input, textarea {
+    width: 100%;
+    font-size: 1rem;
+}
+`
+
+export const StyledSubmitButton = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .5rem;
 `
