@@ -109,7 +109,7 @@ const PokemonDetails = ({routeProps, favorites, setFavorites}) => {
                              id='userName'
                             onChange={handleChangeUserInputs}
                         /> 
-                        <h3>Pokemons seen</h3>
+                        <h3>Number of Pokemon seen</h3>
                         <input
                             name='pokemonsSeen'
                             type='number'
