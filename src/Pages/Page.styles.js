@@ -65,6 +65,7 @@ export const ButtonsContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 100%;
 
     p{
         font-weight: 600;
@@ -72,9 +73,9 @@ export const ButtonsContainer = styled.div`
         white-space: nowrap;
     }
     
-    /* @media screen and (max-width: 1230px) {
+     /* @media screen and (max-width: 700px) {
       flex-direction: column;
-    } */
+    }  */
 
 `
 
@@ -86,6 +87,9 @@ export const FavsContainer = styled.div`
     flex-direction: column;
     align-items: center;
     
+    @media screen and (max-width: 700px) {
+      width:80vw;
+    } 
 `
 
 export const StyledPokemonLink = styled(NavLink)`
@@ -136,6 +140,7 @@ border-radius: 25px;
 input, textarea {
     width: 100%;
     font-size: 1rem;
+    font-family: "Montserrat";
 }
 `
 

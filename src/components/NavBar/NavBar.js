@@ -35,9 +35,11 @@ const StyledActiveLink = styled(NavLink)`
 `
 const MobileNavBarWrapper = styled.div`
     display: none;
-
+    width: 100%;
     @media screen and (max-width: 750px) {
         display:flex;
+        justify-content: space-between;
+
     }
 `
 

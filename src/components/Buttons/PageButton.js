@@ -30,7 +30,7 @@ const StyledPageButton = styled.button`
         margin-left: ${(props) => (props.direction === "row-reversed" ? "2rem" : "0")};
     }
 
-    &:hover{
+    &:hover, &:focus-visible{
         background: var(--red-hover);
     }
 
@@ -47,7 +47,13 @@ const StyledPageButton = styled.button`
            margin: 0;
        }
     }
-    
+    @media screen and (max-width: 700px) {
+      padding: 1rem;
+    } 
+    @media screen and (max-width: 400px) {
+      width:15vw;
+      height: 15vw;
+    } 
 `
 
 const PageButton = ({text, icon, direction, onClick, disabled }) => {

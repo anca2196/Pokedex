@@ -119,7 +119,6 @@ const CommentHeadline = styled.div`
 `
 
 export const HomeCard = ({ favorites, name, setFavorites }) => {
-
     function handleClickAddFavorites(e) {
         setFavorites([...favorites, name ])
     }
@@ -135,17 +134,16 @@ export const HomeCard = ({ favorites, name, setFavorites }) => {
         <StyledHomeCard>
             <StyledPokemonLink to={`/${name}`}><p> { name } </p></StyledPokemonLink>
                <div>
-                { 
-                    favorites.includes( name ) ? <RemoveFavorites onClick={() => { handleClickRemoveFavorites() }}/> 
-                    : <AddFavorites onClick={ () => { handleClickAddFavorites() }} />
-                }
+                    { 
+                        favorites.includes( name ) ? <RemoveFavorites onClick={() => { handleClickRemoveFavorites() }}/> 
+                        : <AddFavorites onClick={ () => { handleClickAddFavorites() }} />
+                    }
                </div>
         </StyledHomeCard>
     )
 }
 
 export const FavCard = ({favorites, setFavorites, name}) => {
-
     function handleClickRemoveFavorites() {
         let newFavorites = favorites.filter(
             (fav) => fav !== name
@@ -170,12 +168,9 @@ export const CommentCard = ({num, comment, name, date }) => {
                     <h3>{name}</h3>
                     <p>{date}</p>
                 </CommentHeadline>
-               
                 <h4>{comment}</h4>
                 <p>{name} saw <span>{num}</span> pokemons! </p>
-                
             </CommentText>
-           
         </CommentCardContainer>
     )
 }

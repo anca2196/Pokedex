@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledActionButton = styled.button`
     background: var(--red);
@@ -22,15 +22,14 @@ const StyledActionButton = styled.button`
         width: 1.5rem;
         margin:0 .5rem; 
     }
-    &:hover{
+
+    &:hover, &:focus-visible{
         background: var(--red-hover);
     }
 
     &:active{
         box-shadow: none;
     }
-
-
 `
 
 const ActionButton = ({text, icon, onClick}) => {
@@ -40,7 +39,6 @@ const ActionButton = ({text, icon, onClick}) => {
                 <img src={icon} alt="" />
                 {text}
             </div>
-           
         </StyledActionButton>
     )
 }

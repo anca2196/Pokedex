@@ -20,10 +20,4 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 16px;
         box-sizing: border-box;
     }
-
-    /* * {
-        border: 1px solid rebeccapurple
-    } */
-
-
 `

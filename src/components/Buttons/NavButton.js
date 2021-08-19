@@ -27,12 +27,17 @@ const StyledNavButton = styled.button`
     }
 
     @media screen and (max-width: 750px) {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
+
+    @media screen and (max-width: 700px) {
+      padding: 0;
+      border-radius: 10px;
+    } 
     
 `
 
-const NavButton = ({text, state, onClick}) => {
+const NavButton = ({text, onClick}) => {
     return (
         <StyledNavButton onClick={ onClick }>
             {text}

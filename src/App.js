@@ -2,7 +2,7 @@ import {MobileNavbar, NavBar} from "./components/NavBar/NavBar";
 import { GlobalStyle } from "./globalStyles";
 import styled from "styled-components";
 import Home from "./Pages/Home";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import Favorites from "./Pages/Favorites";
 import PokemonDetails from "./Pages/PokemonDetails";
@@ -19,10 +19,16 @@ justify-content: space-between;
 `
 
 function App() {
-  const [ favorites, setFavorites ] = useState([]);
+  const [ favorites, setFavorites ] = useState(() => {
+    const saved = localStorage.getItem("favorites");
+    const initialValue = JSON.parse(saved);
+    return initialValue || [];
+  });
   const [ homePageDisplay, setHomePageDisplay ] = useState("home");
 
-
+  useEffect(()=> {
+    localStorage.setItem("favorites", JSON.stringify(favorites))
+  }, [favorites])
  
   return (
     <AppWrapper>
