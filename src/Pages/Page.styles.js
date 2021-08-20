@@ -13,6 +13,7 @@ export const StyledPage = styled.div`
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     overflow-y: auto;
+
     h1{
         text-align: center;
     }
@@ -42,21 +43,22 @@ export const PokemonContainer = styled.div`
     height: 60rem;
     width: 80%;
     
-    
     @media screen and (max-width: 1230px) {
-     flex-wrap: nowrap ;
-     overflow-y: scroll;
-     ::-webkit-scrollbar {
+        flex-wrap: nowrap ;
+        overflow-y: scroll;
+
+        ::-webkit-scrollbar {
             -webkit-appearance: none;
             width: 5px;
-            }
-            ::-webkit-scrollbar-thumb {
+        }
+
+        ::-webkit-scrollbar-thumb {
             border-radius: 4px;
             background-color: rgba(0, 0, 0, .5);
             -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
             box-shadow: 0 0 1px rgba(255, 255, 255, .5);
-            }
-                }
+        }
+    }
 
 `
 
@@ -72,11 +74,6 @@ export const ButtonsContainer = styled.div`
         font-size: 1rem;
         white-space: nowrap;
     }
-    
-     /* @media screen and (max-width: 700px) {
-      flex-direction: column;
-    }  */
-
 `
 
 export const FavsContainer = styled.div`
@@ -105,6 +102,7 @@ export const PokeDetailsContainer = styled.div`
     padding: 0 2rem;
     margin-bottom: 1rem;
     font-size: 1.1rem;
+
     div{
         display: grid;
         grid-template-columns: repeat(2, auto);
@@ -114,7 +112,6 @@ export const PokeDetailsContainer = styled.div`
     @media screen and (max-width: 1130px) {
         flex-direction: column;
     }
-    
 `
 export const PokemonDetailsWrapper = styled.div`
     display: flex;
@@ -132,16 +129,25 @@ export const PokemonDetailsWrapper = styled.div`
 `
 
 export const CommentsContainer = styled.div`
-background: var(--blue);
-margin: 1.5rem;
-padding: .5rem 1.5rem;
-border-radius: 25px;
+    background: var(--blue);
+    margin: 1.5rem;
+    padding: .5rem 1.5rem;
+    border-radius: 25px;
 
-input, textarea {
-    width: 100%;
-    font-size: 1rem;
-    font-family: "Montserrat";
-}
+    input, textarea {
+        width: 100%;
+        height:2rem;
+        font-size: 1rem;
+        border: none;
+        box-shadow: inset 0 4px 4px 0 hsl( 0, 0%, 0%, 0.25 );
+        background: #E5E5E5;
+        font-family: "Montserrat";
+      
+    }
+
+    textarea{
+        height:7rem;
+    }
 `
 
 export const StyledSubmitButton = styled.div`
