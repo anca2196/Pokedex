@@ -8,14 +8,13 @@ import Favorites from "./Pages/Favorites";
 import PokemonDetails from "./Pages/PokemonDetails";
 
 const AppWrapper = styled.div`
-display: flex;
-align-items: center;
-justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-@media screen and (max-width: 750px) {
-        flex-direction: column;
-    }
-
+  @media screen and (max-width: 750px) {
+          flex-direction: column;
+      }
 `
 
 function App() {
@@ -38,17 +37,15 @@ function App() {
        <Switch>
         <Route exact path="/" >
           { 
-            homePageDisplay === "home" ?  < Home favorites={ favorites } setFavorites={setFavorites} /> 
-              :  <Favorites favorites={favorites} setFavorites={setFavorites}/>
+            homePageDisplay === "home" 
+            ?  < Home favorites={ favorites } setFavorites={setFavorites} /> 
+            :  <Favorites favorites={favorites} setFavorites={setFavorites}/>
           }
         </Route>
         <Route path="/:name" render={(routeProps) => (
-            <PokemonDetails routeProps={routeProps} favorites={favorites} setFavorites={setFavorites}/>
-          )} />
+            <PokemonDetails routeProps={routeProps} favorites={favorites} setFavorites={setFavorites}/>)} />
        </Switch>
-      
     </AppWrapper>
-  
   );
 }
 

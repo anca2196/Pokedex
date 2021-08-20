@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import previous from "../../assets/previous-arrow.svg";
 import next from "../../assets/next-arrow.svg";
